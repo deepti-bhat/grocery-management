@@ -6,24 +6,24 @@ Category *sections[15];
 void init()
 {
     sections[0] = new Category("Fruits");
-    sections[0]->head = sections[0]->push(sections[0]->head, 101, "Apple", 32.5, 22);
-    sections[0]->head = sections[0]->push(sections[0]->head, 102, "Banana", 5, 48);
-    sections[0]->head = sections[0]->push(sections[0]->head, 103, "Kiwi", 40, 2);
-    sections[0]->head = sections[0]->push(sections[0]->head, 104, "Orange", 7, 35);
+    sections[0]->head = sections[0]->push(sections[0]->head, 101, const_cast<char *>("Apple"), 32.5, 22);
+    sections[0]->head = sections[0]->push(sections[0]->head, 102, const_cast<char *>("Banana"), 5, 48);
+    sections[0]->head = sections[0]->push(sections[0]->head, 103, const_cast<char *>("Kiwi"), 40, 2);
+    sections[0]->head = sections[0]->push(sections[0]->head, 104, const_cast<char *>("Orange"), 7, 35);
     sections[1] = new Category("Vegetables");
-    sections[1]->head = sections[1]->push(sections[1]->head, 201, "Potato", 4, 120);
-    sections[1]->head = sections[1]->push(sections[1]->head, 202, "Tomato", 9, 35);
-    sections[1]->head = sections[1]->push(sections[1]->head, 203, "Chilies", 10, 40);
-    sections[1]->head = sections[1]->push(sections[1]->head, 204, "Spinach", 15, 30);
+    sections[1]->head = sections[1]->push(sections[1]->head, 201, const_cast<char *>("Potato"), 4, 120);
+    sections[1]->head = sections[1]->push(sections[1]->head, 202, const_cast<char *>("Tomato"), 9, 35);
+    sections[1]->head = sections[1]->push(sections[1]->head, 203, const_cast<char *>("Chilies"), 10, 40);
+    sections[1]->head = sections[1]->push(sections[1]->head, 204, const_cast<char *>("Spinach"), 15, 30);
     sections[2] = new Category("Dairy");
-    sections[2]->head = sections[2]->push(sections[2]->head, 301, "Milk", 25, 100);
-    sections[2]->head = sections[2]->push(sections[2]->head, 302, "Cheese", 130, 20);
-    sections[2]->head = sections[2]->push(sections[2]->head, 303, "Butter", 49, 45);
+    sections[2]->head = sections[2]->push(sections[2]->head, 301, const_cast<char *>("Milk"), 25, 100);
+    sections[2]->head = sections[2]->push(sections[2]->head, 302, const_cast<char *>("Cheese"), 130, 20);
+    sections[2]->head = sections[2]->push(sections[2]->head, 303, const_cast<char *>("Butter"), 49, 45);
     sections[3] = new Category("Snacks");
-    sections[3]->head = sections[3]->push(sections[3]->head, 401, "Kurkure", 10, 2);
-    sections[3]->head = sections[3]->push(sections[3]->head, 402, "Lays", 20, 1);
-    sections[3]->head = sections[3]->push(sections[3]->head, 403, "Bingo", 15, 25);
-    sections[3]->head = sections[3]->push(sections[3]->head, 404, "Bourbon", 30, 29);
+    sections[3]->head = sections[3]->push(sections[3]->head, 401, const_cast<char *>("Kurkure"), 10, 2);
+    sections[3]->head = sections[3]->push(sections[3]->head, 402, const_cast<char *>("Lays"), 20, 1);
+    sections[3]->head = sections[3]->push(sections[3]->head, 403, const_cast<char *>("Bingo"), 15, 25);
+    sections[3]->head = sections[3]->push(sections[3]->head, 404, const_cast<char *>("Bourbon"), 30, 29);
 }
 
 int checkCategory(Category *sections[15])
@@ -166,7 +166,7 @@ int main()
     int mode;
     do
     {
-        cout << "1=>Vendor\t2=>Customer\t0=>Exit Program\tEnter mode: ";
+        cout << "1 => Vendor\t2 => Customer\t0 => Exit Program\tEnter mode: ";
         cin >> mode;
         if (mode == 1)
             vendor();

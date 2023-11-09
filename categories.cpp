@@ -161,27 +161,26 @@ public:
                  << endl;
             return;
         }
-        Node *first = NULL, *second = head, *third = head->link;
-        while (second != NULL)
+        Node *first = head, *second = head->link;
+        while (first != NULL)
         {
-            if (second->product_id == id)
+            if (first->product_id == id)
             {
                 break;
             }
             first = second;
-            second = third;
-            if (third != NULL)
-                third = third->link;
+            if (second != NULL)
+                second = second->link;
         }
-        if (second == NULL)
+        if (first == NULL)
         {
             cout << "Product not found!" << endl
                  << endl;
             return;
         }
-        cout << "Enter new price of " << second->product_name << ": ";
+        cout << "Enter new price of " << first->product_name << ": ";
         cin >> price;
-        second->price = price;
+        first->price = price;
         cout << "Product with id " << id << " has been successfully updated." << endl
              << endl;
         return;
@@ -204,27 +203,26 @@ public:
                  << endl;
             return;
         }
-        Node *first = NULL, *second = head, *third = head->link;
-        while (second != NULL)
+        Node *first = head, *second = head->link;
+        while (first != NULL)
         {
-            if (second->product_id == id)
+            if (first->product_id == id)
             {
                 break;
             }
             first = second;
-            second = third;
-            if (third != NULL)
-                third = third->link;
+            if (second != NULL)
+                second = second->link;
         }
-        if (second == NULL)
+        if (first == NULL)
         {
             cout << "Product not found!" << endl
                  << endl;
             return;
         }
-        cout << "Enter new stock of " << second->product_name << ": ";
+        cout << "Enter new stock of " << first->product_name << ": ";
         cin >> stock;
-        second->stock = stock;
+        first->stock = stock;
         cout << "Product with id " << id << " has been successfully updated." << endl
              << endl;
         return;
@@ -242,19 +240,18 @@ public:
             head->stock -= editStock;
             return;
         }
-        Node *first = NULL, *second = head, *third = head->link;
-        while (second != NULL)
+        Node *first = head, *second = head->link;
+        while (first != NULL)
         {
-            if (second->product_id == id)
+            if (first->product_id == id)
             {
                 break;
             }
             first = second;
-            second = third;
-            if (third != NULL)
-                third = third->link;
+            if (second != NULL)
+                second = second->link;
         }
-        second->stock -= editStock;
+        first->stock -= editStock;
         return;
     }
 };
