@@ -84,6 +84,7 @@ public:
 
     Node *pop(Node *head, int id)
     {
+       
         if (head == NULL)
         {
             cout << "Empty category!" << endl
@@ -115,7 +116,12 @@ public:
                  << endl;
             return head;
         }
-        first->link = third;
+        if(first != NULL) {
+            first->link = third;
+        }
+        else {
+            head = third;
+        }
         cout << "Product with id " << id << " has been successfully deleted." << endl
              << endl;
         free(second);
